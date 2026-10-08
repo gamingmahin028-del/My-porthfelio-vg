@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MAHIN VG | Graphic Designer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#050505;
+  --card:#0b0b0b;
+  --white:#f8f8f8;
+  --muted:#8b8b91;
+  --line:rgba(255,255,255,.10);
+  --purple:#8b5cf6;
+  --cyan:#22d3ee;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+body.page-open{
+  overflow:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:76px;
+  padding:0 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  z-index:1000;
+
+  background:rgba(5,5,5,.75);
+  backdrop-filter:blur(18px);
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo{
+  font-family:"Manrope",sans-serif;
+  font-size:20px;
+  font-weight:800;
+}
+
+nav{
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  color:#aaa;
+  font-size:14px;
+  transition:.3s;
+}
+
+nav a:hover{
+  color:#fff;
+}
+
+
+/* =========================
+COMMON
+========================= */
+
+section{
+  width:min(1120px,86%);
+  margin:auto;
+  padding:120px 0;
+}
+
+.label{
+  color:var(--purple);
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-size:11px;
+  font-weight:700;
+  margin-bottom:18px;
+}
+
+.heading{
+  font-family:"Manrope",sans-serif;
+  font-size:clamp(38px,6vw,68px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-bottom:55px;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 7% 80px;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+
+  width:650px;
+  height:650px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(139,92,246,.18),
+    transparent 65%
+  );
+
+  top:-220px;
+  left:-180px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+
+  width:650px;
+  height:650px;
+
+  background:
+  radial-gradient(
+    circle,
+    rgba(34,211,238,.10),
+    transparent 65%
+  );
+
+  right:-180px;
+  bottom:-280px;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:900px;
+}
+
+.hero-small{
+  color:#999;
+  font-size:14px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-family:"Manrope",sans-serif;
+  font-size:clamp(65px,13vw,150px);
+  line-height:.88;
+  letter-spacing:-8px;
+  font-weight:800;
+
+  background:
+  linear-gradient(
+    100deg,
+    #fff 25%,
+    #a78bfa 55%,
+    #22d3ee 90%
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.hero-title{
+  margin-top:28px;
+  font-size:clamp(18px,3vw,27px);
+  color:#ddd;
+}
+
+.hero-desc{
+  margin:18px auto 35px;
+  max-width:560px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+
+/* =========================
+BUTTON
+========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 24px;
+
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50px;
+
+  background:rgba(255,255,255,.05);
+
+  transition:.35s;
+
+  font-size:14px;
+}
+
+.btn:hover{
+  background:#fff;
+  color:#000;
+  transform:translateY(-3px);
+}
+
+
+/* =========================
+WORK
+========================= */
+
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.work{
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  background:var(--card);
+
+  transition:.4s;
+}
+
+.work:hover{
+  transform:translateY(-6px);
+  border-color:rgba(139,92,246,.45);
+}
+
+.work img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  display:block;
+
+  transition:.5s;
+}
+
+.work:hover img{
+  transform:scale(1.04);
+}
+
+.work-name{
+  padding:18px 20px;
+  font-size:15px;
+  font-weight:600;
+}
+
+
+/* =========================
+SERVICES
+========================= */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.service{
+  min-height:145px;
+  padding:25px;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(255,255,255,.045),
+    rgba(255,255,255,.012)
+  );
+
+  cursor:pointer;
+
+  transition:.35s;
+}
+
+.service:hover{
+  transform:translateY(-5px);
+
+  border-color:
+  rgba(139,92,246,.55);
+
+  background:
+  linear-gradient(
+    145deg,
+    rgba(139,92,246,.11),
+    rgba(34,211,238,.035)
+  );
+}
+
+.service-number{
+  color:var(--purple);
+  font-size:12px;
+  margin-bottom:35px;
+}
+
+.service-name{
+  font-family:"Manrope",sans-serif;
+  font-size:25px;
+  font-weight:700;
+}
+
+
+/* =========================
+STATS
+========================= */
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.stat{
+  padding:35px;
+
+  border:1px solid var(--line);
+  border-radius:18px;
+
+  background:#090909;
+}
+
+.stat-number{
+  font-family:"Manrope",sans-serif;
+  font-size:50px;
+  font-weight:800;
+
+  background:
+  linear-gradient(
+    90deg,
+    #fff,
+    #8b5cf6
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.stat-text{
+  color:var(--muted);
+  margin-top:5px;
+}
+
+
+/* =========================
+CONTACT
+========================= */
+
+.contact{
+  text-align:center;
+  padding-bottom:100px;
+}
+
+.contact-box{
+  padding:70px 30px;
+
+  border:1px solid var(--line);
+  border-radius:25px;
+
+  background:
+  radial-gradient(
+    circle at top,
+    rgba(139,92,246,.13),
+    transparent 55%
+  ),
+  #080808;
+}
+
+.contact-box .heading{
+  margin-bottom:25px;
+}
+
+.whatsapp{
+  border-color:#22c55e;
+}
+
+.whatsapp:hover{
+  background:#22c55e;
+  color:#fff;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+  text-align:center;
+  padding:30px 20px;
+
+  color:#666;
+
+  border-top:
+  1px solid rgba(255,255,255,.06);
+
+  font-size:13px;
+}
+
+
+/* =========================
+NEW SERVICE INTERFACE
+========================= */
+
+.service-page{
+  position:fixed;
+  inset:0;
+
+  z-index:5000;
+
+  background:#050505;
+
+  overflow-y:auto;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(30px);
+
+  transition:
+  opacity .35s ease,
+  transform .35s ease,
+  visibility .35s;
+}
+
+.service-page.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.service-page-inner{
+  width:min(1120px,86%);
+  margin:auto;
+
+  padding:
+  110px 0 80px;
+}
+
+.service-header{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+
+  gap:25px;
+
+  margin-bottom:55px;
+}
+
+.service-page-title{
+  font-family:"Manrope",sans-serif;
+
+  font-size:
+  clamp(48px,8vw,90px);
+
+  line-height:.95;
+
+  letter-spacing:-4px;
+
+  background:
+  linear-gradient(
+    100deg,
+    #fff,
+    #a78bfa,
+    #22d3ee
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  margin-bottom:15px;
+}
+
+.service-description{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.back-button{
+  border:1px solid var(--line);
+
+  background:rgba(255,255,255,.04);
+
+  color:#ddd;
+
+  padding:12px 20px;
+
+  border-radius:50px;
+
+  cursor:pointer;
+
+  font-size:14px;
+
+  transition:.3s;
+
+  white-space:nowrap;
+}
+
+.back-button:hover{
+  background:#fff;
+  color:#000;
+}
+
+.service-gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.service-card{
+  overflow:hidden;
+
+  border:1px solid var(--line);
+  border-radius:20px;
+
+  background:#090909;
+
+  transition:.4s;
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+
+  border-color:
+  rgba(139,92,246,.5);
+}
+
+.service-card img{
+  width:100%;
+
+  aspect-ratio:16/10;
+
+  object-fit:cover;
+
+  display:block;
+
+  transition:.5s;
+}
+
+.service-card:hover img{
+  transform:scale(1.035);
+}
+
+.service-card-title{
+  padding:18px 20px;
+
+  font-size:15px;
+  font-weight:600;
+}
+
+
+/* =========================
+ANIMATION
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(35px);
+
+  transition:
+  opacity .8s ease,
+  transform .8s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  header{
+    padding:0 6%;
+  }
+
+  nav{
+    gap:16px;
+  }
+
+  nav a{
+    font-size:12px;
+  }
+
+  section{
+    width:88%;
+    padding:90px 0;
+  }
+
+  .hero{
+    padding-left:6%;
+    padding-right:6%;
+  }
+
+  .hero h1{
+    letter-spacing:-5px;
+  }
+
+  .heading{
+    letter-spacing:-2px;
+    margin-bottom:35px;
+  }
+
+  .work-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .service{
+    min-height:125px;
+    padding:18px;
+  }
+
+  .service-name{
+    font-size:20px;
+  }
+
+  .service-number{
+    margin-bottom:25px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .service-page-inner{
+    width:88%;
+  }
+
+  .service-header{
+    flex-direction:column;
+  }
+
+  .service-gallery{
+    grid-template-columns:1fr;
+  }
+
+  .service-page-title{
+    letter-spacing:-2px;
+  }
+
+}
+
+
+/* =========================
+HIDE
+========================= */
+
+body.page-open > header,
+body.page-open > section,
+body.page-open > footer{
+  pointer-events:none;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ==================================================
+MAIN HEADER
+================================================== -->
+
+<header>
+
+  <div class="logo">
+    MAHIN VG
+  </div>
+
+  <nav>
+
+    <a href="#work">
+      Work
+    </a>
+
+    <a href="#services">
+      Services
+    </a>
+
+    <a href="#contact">
+      Contact
+    </a>
+
+  </nav>
+
+</header>
+
+
+<!-- ==================================================
+HERO
+================================================== -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="hero-small">
+      Graphic Designer
+    </div>
+
+    <h1>
+      MAHIN VG
+    </h1>
+
+    <div class="hero-title">
+      Portfolio
+    </div>
+
+    <p class="hero-desc">
+      Logo Design · Post Design · Thumbnail Design · Banner Design
+    </p>
+
+    <a href="#work" class="btn">
+      View All Work ↓
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+ALL WORK
+================================================== -->
+
+<section id="work" class="reveal">
+
+  <div class="label">
+    Selected Work
+  </div>
+
+  <h2 class="heading">
+    View All Work
+  </h2>
+
+
+  <div class="work-grid">
+
+
+    <!-- WORK 01 -->
+
+    <div class="work">
+
+      <img
+        src="YOUR-WORK-IMAGE-URL-1"
+        alt="Logo Design">
+
+      <div class="work-name">
+        Logo Design
+      </div>
+
+    </div>
+
+
+    <!-- WORK 02 -->
+
+    <div class="work">
+
+      <img
+        src="YOUR-WORK-IMAGE-URL-2"
+        alt="Post Design">
+
+      <div class="work-name">
+        Post Design
+      </div>
+
+    </div>
+
+
+    <!-- WORK 03 -->
+
+    <div class="work">
+
+      <img
+        src="YOUR-WORK-IMAGE-URL-3"
+        alt="Thumbnail Design">
+
+      <div class="work-name">
+        Thumbnail Design
+      </div>
+
+    </div>
+
+
+    <!-- WORK 04 -->
+
+    <div class="work">
+
+      <img
+        src="YOUR-WORK-IMAGE-URL-4"
+        alt="Banner Design">
+
+      <div class="work-name">
+        Banner Design
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+MY SERVICES
+================================================== -->
+
+<section id="services" class="reveal">
+
+  <div class="label">
+    What I Do
+  </div>
+
+  <h2 class="heading">
+    My Services
+  </h2>
+
+
+  <div class="services">
+
+
+    <!-- LOGO -->
+
+    <div
+      class="service"
+      onclick="openPage('logoPage')">
+
+      <div class="service-number">
+        01
+      </div>
+
+      <div class="service-name">
+        Logo
+      </div>
+
+    </div>
+
+
+    <!-- BANNER -->
+
+    <div
+      class="service"
+      onclick="openPage('bannerPage')">
+
+      <div class="service-number">
+        02
+      </div>
+
+      <div class="service-name">
+        Banner
+      </div>
+
+    </div>
+
+
+    <!-- THUMBNAIL -->
+
+    <div
+      class="service"
+      onclick="openPage('thumbnailPage')">
+
+      <div class="service-number">
+        03
+      </div>
+
+      <div class="service-name">
+        Thumbnail
+      </div>
+
+    </div>
+
+
+    <!-- POST -->
+
+    <div
+      class="service"
+      onclick="openPage('postPage')">
+
+      <div class="service-number">
+        04
+      </div>
+
+      <div class="service-name">
+        Post
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+STATS
+================================================== -->
+
+<section class="reveal">
+
+  <div class="stats">
+
+
+    <div class="stat">
+
+      <div class="stat-number">
+        1+
+      </div>
+
+      <div class="stat-text">
+        Years Experience
+      </div>
+
+    </div>
+
+
+    <div class="stat">
+
+      <div class="stat-number">
+        50+
+      </div>
+
+      <div class="stat-text">
+        Completed Projects
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ==================================================
+CONTACT
+================================================== -->
+
+<section id="contact" class="contact reveal">
+
+  <div class="contact-box">
+
+    <div class="label">
+      Let's Work Together
+    </div>
+
+    <h2 class="heading">
+      Have a project?
+    </h2>
+
+    <a
+      href="https://wa.me/8801XXXXXXXXX"
+      target="_blank"
+      class="btn whatsapp">
+
+      Contact on WhatsApp →
+
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2026 MAHIN VG. All Rights Reserved.
+
+</footer>
+
+
+
+<!-- ==================================================
+LOGO PAGE — 10 SLOTS
+================================================== -->
+
+<div id="logoPage" class="service-page">
+
+  <div class="service-page-inner">
+
+    <div class="service-header">
+
+      <div>
+
+        <div class="label">
+          MAHIN VG · WORK
+        </div>
+
+        <h1 class="service-page-title">
+          Logo Design
+        </h1>
+
+        <div class="service-description">
+          All Logo Design works
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="closePage()">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+
+    <div class="service-gallery">
+
+      <!-- ADD YOUR LOGOS HERE -->
+
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-1" alt="Logo 01"><div class="service-card-title">Logo Design 01</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-2" alt="Logo 02"><div class="service-card-title">Logo Design 02</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-3" alt="Logo 03"><div class="service-card-title">Logo Design 03</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-4" alt="Logo 04"><div class="service-card-title">Logo Design 04</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-5" alt="Logo 05"><div class="service-card-title">Logo Design 05</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-6" alt="Logo 06"><div class="service-card-title">Logo Design 06</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-7" alt="Logo 07"><div class="service-card-title">Logo Design 07</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-8" alt="Logo 08"><div class="service-card-title">Logo Design 08</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-9" alt="Logo 09"><div class="service-card-title">Logo Design 09</div></div>
+      <div class="service-card"><img src="YOUR-LOGO-IMAGE-URL-10" alt="Logo 10"><div class="service-card-title">Logo Design 10</div></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ==================================================
+BANNER PAGE — 10 SLOTS
+================================================== -->
+
+<div id="bannerPage" class="service-page">
+
+  <div class="service-page-inner">
+
+    <div class="service-header">
+
+      <div>
+
+        <div class="label">
+          MAHIN VG · WORK
+        </div>
+
+        <h1 class="service-page-title">
+          Banner Design
+        </h1>
+
+        <div class="service-description">
+          All Banner Design works
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="closePage()">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+
+    <div class="service-gallery">
+
+      <!-- ADD YOUR BANNERS HERE -->
+
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-1" alt="Banner 01"><div class="service-card-title">Banner Design 01</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-2" alt="Banner 02"><div class="service-card-title">Banner Design 02</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-3" alt="Banner 03"><div class="service-card-title">Banner Design 03</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-4" alt="Banner 04"><div class="service-card-title">Banner Design 04</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-5" alt="Banner 05"><div class="service-card-title">Banner Design 05</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-6" alt="Banner 06"><div class="service-card-title">Banner Design 06</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-7" alt="Banner 07"><div class="service-card-title">Banner Design 07</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-8" alt="Banner 08"><div class="service-card-title">Banner Design 08</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-9" alt="Banner 09"><div class="service-card-title">Banner Design 09</div></div>
+      <div class="service-card"><img src="YOUR-BANNER-IMAGE-URL-10" alt="Banner 10"><div class="service-card-title">Banner Design 10</div></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ==================================================
+THUMBNAIL PAGE — 10 SLOTS
+================================================== -->
+
+<div id="thumbnailPage" class="service-page">
+
+  <div class="service-page-inner">
+
+    <div class="service-header">
+
+      <div>
+
+        <div class="label">
+          MAHIN VG · WORK
+        </div>
+
+        <h1 class="service-page-title">
+          Thumbnail Design
+        </h1>
+
+        <div class="service-description">
+          All Thumbnail Design works
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="closePage()">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+
+    <div class="service-gallery">
+
+      <!-- ADD YOUR THUMBNAILS HERE -->
+
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-1" alt="Thumbnail 01"><div class="service-card-title">Thumbnail Design 01</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-2" alt="Thumbnail 02"><div class="service-card-title">Thumbnail Design 02</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-3" alt="Thumbnail 03"><div class="service-card-title">Thumbnail Design 03</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-4" alt="Thumbnail 04"><div class="service-card-title">Thumbnail Design 04</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-5" alt="Thumbnail 05"><div class="service-card-title">Thumbnail Design 05</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-6" alt="Thumbnail 06"><div class="service-card-title">Thumbnail Design 06</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-7" alt="Thumbnail 07"><div class="service-card-title">Thumbnail Design 07</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-8" alt="Thumbnail 08"><div class="service-card-title">Thumbnail Design 08</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-9" alt="Thumbnail 09"><div class="service-card-title">Thumbnail Design 09</div></div>
+      <div class="service-card"><img src="YOUR-THUMBNAIL-IMAGE-URL-10" alt="Thumbnail 10"><div class="service-card-title">Thumbnail Design 10</div></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ==================================================
+POST PAGE — 10 SLOTS
+================================================== -->
+
+<div id="postPage" class="service-page">
+
+  <div class="service-page-inner">
+
+    <div class="service-header">
+
+      <div>
+
+        <div class="label">
+          MAHIN VG · WORK
+        </div>
+
+        <h1 class="service-page-title">
+          Post Design
+        </h1>
+
+        <div class="service-description">
+          All Post Design works
+        </div>
+
+      </div>
+
+
+      <button
+        class="back-button"
+        onclick="closePage()">
+
+        ← Back
+
+      </button>
+
+    </div>
+
+
+    <div class="service-gallery">
+
+      <!-- ADD YOUR POSTS HERE -->
+
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-1" alt="Post 01"><div class="service-card-title">Post Design 01</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-2" alt="Post 02"><div class="service-card-title">Post Design 02</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-3" alt="Post 03"><div class="service-card-title">Post Design 03</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-4" alt="Post 04"><div class="service-card-title">Post Design 04</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-5" alt="Post 05"><div class="service-card-title">Post Design 05</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-6" alt="Post 06"><div class="service-card-title">Post Design 06</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-7" alt="Post 07"><div class="service-card-title">Post Design 07</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-8" alt="Post 08"><div class="service-card-title">Post Design 08</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-9" alt="Post 09"><div class="service-card-title">Post Design 09</div></div>
+      <div class="service-card"><img src="YOUR-POST-IMAGE-URL-10" alt="Post 10"><div class="service-card-title">Post Design 10</div></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+OPEN NEW INTERFACE
+========================= */
+
+function openPage(pageID){
+
+  const page =
+    document.getElementById(pageID);
+
+  page.classList.add("active");
+
+  document.body.classList.add("page-open");
+
+  page.scrollTop = 0;
+
+}
+
+
+/* =========================
+CLOSE NEW INTERFACE
+========================= */
+
+function closePage(){
+
+  const pages =
+    document.querySelectorAll(".service-page");
+
+  pages.forEach(function(page){
+
+    page.classList.remove("active");
+
+  });
+
+  document.body.classList.remove("page-open");
+
+}
+
+
+/* =========================
+ESC KEY
+========================= */
+
+document.addEventListener(
+  "keydown",
+  function(e){
+
+    if(e.key === "Escape"){
+
+      closePage();
+
+    }
+
+  }
+);
+
+
+/* =========================
+SCROLL ANIMATION
+========================= */
+
+const elements =
+  document.querySelectorAll(".reveal");
+
+const observer =
+  new IntersectionObserver(
+
+    function(entries){
+
+      entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          observer.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:.12
+    }
+
+  );
+
+
+elements.forEach(function(el){
+
+  observer.observe(el);
+
+});
+
+</script>
+
+</body>
+</html>
